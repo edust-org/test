@@ -1,7 +1,9 @@
-# test
+![Edust](https://res.cloudinary.com/dbaa3pxau/image/upload/v1725846914/logo_lvcnbc.jpg)
 
-A I am a
+# Edust
 
-B I am B
+Edust is a web application designed to enhance educational collaboration and interaction between students, teachers, and educational institutions.
 
-C I am C
+# About Edust
+
+It provides features for user registration, organization page creation, and customization using a page builder tool.
