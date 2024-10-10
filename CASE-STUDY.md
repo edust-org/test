@@ -4,9 +4,9 @@ At [Edust Org](https://github.com/edust-org), our backend development involved c
 
 # Versions
 
-- [0.1.0](#version-010-initial-backend-setup)
+- [0.1.0](#version-010-initial-backend)
 
-## Version 0.1.0: Initial Backend Setup
+## Version 0.1.0: Initial Backend
 
 ### Problem Statement
 
