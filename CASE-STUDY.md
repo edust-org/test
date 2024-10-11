@@ -25,7 +25,7 @@ We structured our backend to use the following components:
 
 ### Challenges Faced and Solutions Provided
 
-###### Jun 10, 2024
+#### Jun 10, 2024
 
 **Backend Environment Setup**:
 
