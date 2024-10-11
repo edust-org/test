@@ -14,40 +14,90 @@ The primary challenge we faced in the early stages of backend development was se
 
 ### The Decision to Use
 
-To address this, we chose **Express.js** as our backend framework with **TypeScript** for static typing, which helps in reducing bugs and enhancing code maintainability. We also adopted **Sequelize ORM** for database interactions to allow flexibility in switching between different databases like MySQL and MongoDB in the future.
+To address this, we chose **Express.js** as our backend framework with **TypeScript** for static typing, which helps in reducing bugs and enhancing code maintainability. We also adopted **Sequelize ORM** for database interactions to allow flexibility in switching between different databases like MySQL and PostgresSQL in the future. Also many different packages.
 
 We structured our backend to use the following components:
 
-- **Routes**: For managing the API endpoints.
-- **Controllers**: For handling the business logic.
-- **Services**: For database and logic abstraction.
-- **Middleware**: For common tasks like authentication and error handling.
+- **src/api/v0/routes**: For managing the API endpoints.
+- **src/api/v0/controllers**: For handling the business logic.
+- **src/api/v0/services**: For database and logic abstraction.
+- **src/middleware**: For common tasks like authentication and error handling.
 
 ### Challenges Faced and Solutions Provided
 
-1. **User Authentication**:
+###### Jun 10, 2024
 
-   - **Problem**: We needed a secure authentication mechanism for both login and registration processes.
-   - **Solution**: Implemented JWT (JSON Web Tokens) for stateless user sessions. Users could log in via email and password, and the server would generate JWT tokens for subsequent API requests. The implementation was done using the commits [2ec994c](https://github.com/your-repo/commit/2ec994c) and [9bc8f55](https://github.com/your-repo/commit/9bc8f55).
+**Backend Environment Setup**:
 
-2. **Role-Based Access Control**:
+- **Problem**: We needed to set up a backend environment using Express, TypeScript, and integrate a database. This was crucial for establishing the foundation of our project.
+- **Solution**:
 
-   - **Problem**: We needed a way to assign different roles (e.g., admin, user, organization owner) and restrict access to certain features based on roles.
-   - **Solution**: Introduced a `Role` model in Sequelize to define different user roles and implemented middleware to check user permissions before allowing access to certain routes. This was implemented in commits like [f338b50](https://github.com/your-repo/commit/f338b50) and [385f912](https://github.com/your-repo/commit/385f912).
+  - We started by setting up the basic environment [99172f8](https://github.com/edust-org/edust-backend/commit/99172f8).
+  - We then set up Express with TypeScript [429b8a5](https://github.com/edust-org/edust-backend/commit/429b8a5). Here is an excerpt from the `package.json` file, which highlights the setup:
 
-3. **Organization Management**:
+  ```json
+  {
+    "name": "edust-backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "tsc",
+      "start": "node dist/server.js",
+      "dev": "nodemon",
+      "lint": "eslint . --ext .ts",
+      "format": "prettier --write .",
+      "db:migrate": "ts-node migrate.ts",
+      "db:seed": "npx sequelize-cli db:seed:all",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "bcrypt": "^5.1.1",
+      "body-parser": "^1.20.2",
+      "cookie-parser": "^1.4.6",
+      "cors": "^2.8.5",
+      "dotenv": "^16.4.5",
+      "express": "^4.19.2",
+      "express-validator": "^7.1.0",
+      "jsonwebtoken": "^9.0.2",
+      "mysql2": "^3.10.2",
+      "sequelize": "^6.37.3",
+      "umzug": "^3.8.1"
+    },
+    "devDependencies": {
+      "@types/bcrypt": "^5.0.2",
+      "@types/body-parser": "^1.19.5",
+      "@types/cookie-parser": "^1.4.7",
+      "@types/cors": "^2.8.17",
+      "@types/es6-promise": "^3.3.0",
+      "@types/express": "^4.17.21",
+      "@types/jsonwebtoken": "^9.0.6",
+      "@types/node": "^20.14.10",
+      "@types/sequelize": "^4.28.20",
+      "@typescript-eslint/eslint-plugin": "^7.16.0",
+      "@typescript-eslint/parser": "^7.16.0",
+      "eslint": "^9.6.0",
+      "eslint-config-prettier": "^9.1.0",
+      "eslint-import-resolver-typescript": "^3.6.1",
+      "eslint-plugin-prettier": "^5.1.3",
+      "nodemon": "^3.1.4",
+      "prettier": "^3.3.2",
+      "sequelize-cli": "^6.6.2",
+      "ts-node": "^10.9.2",
+      "ts-node-dev": "^2.0.0",
+      "tsconfig-paths": "^4.2.0",
+      "typescript": "^5.5.3"
+    }
+  }
+  ```
 
-   - **Problem**: Users needed the ability to create and manage organizations, such as educational institutions or colleges, with different role structures.
-   - **Solution**: Developed an organization model and seed data to assign roles within organizations. Users could create organizations and invite others to join them, with permissions based on their role. This feature was tackled in commits like [d1c67a0](https://github.com/your-repo/commit/d1c67a0) and [81f9852](https://github.com/your-repo/commit/81f9852).
+  The setup involved a lot of configuration, such as adding TypeScript support, setting up database migrations and seeders, linting with ESLint, and code formatting with Prettier.
 
-4. **API Documentation with Swagger**:
-
-   - **Problem**: As the API grew, it became difficult for developers and external clients to understand the available endpoints and their required parameters.
-   - **Solution**: Integrated Swagger for API documentation, providing a user-friendly interface to interact with the API endpoints. This allowed for easier testing and understanding of the backend structure. Initial setup was done in commit [0945626](https://github.com/your-repo/commit/0945626).
-
-5. **Global Error Handling**:
-   - **Problem**: Without a centralized error-handling mechanism, errors could crash the server or go unnoticed.
-   - **Solution**: Created global error handlers to catch and log all errors, providing appropriate HTTP responses to the client and preventing server crashes. This was implemented in commit [e1a908f](https://github.com/your-repo/commit/e1a908f).
+- **Challenges**
+  The main challenge we faced was dealing with database migrations and seeders. While there are plenty of resources available for JavaScript, we had fewer resources for TypeScript. We had to figure out how to properly handle these using TypeScript and Sequelize ORM. This took time, but we resolved it by carefully integrating the right TypeScript tools.
 
 ### Conclusion
 
