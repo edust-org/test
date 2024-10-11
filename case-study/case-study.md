@@ -27,7 +27,7 @@ We structured our backend to use the following components:
 
 #### Jun 10, 2024
 
-**Backend Environment Setup**:
+##### Backend Environment Setup:
 
 - **Problem**: We needed to set up a backend environment using Express, TypeScript, and integrate a database. This was crucial for establishing the foundation of our project.
 - **Solution**:
@@ -101,7 +101,7 @@ We structured our backend to use the following components:
 
 #### Jun 12, 2024
 
-**Backend Environment Setup**:
+##### Backend Environment Setup:
 
 - **Problem**: We needed to define and set up roles for both users and organizations in the backend. The goal was to establish a clear structure for permissions and access control across different types of users and organizations within the system.
 
@@ -122,7 +122,7 @@ We structured our backend to use the following components:
 
 #### Jun 13, 2024
 
-**Global Error Handling and File Improvements**:
+##### Global Error Handling and File Improvements:
 
 - **Problem**: As the project grew, error handling across different modules became inconsistent. There was a need for a unified error-handling mechanism to ensure that errors were managed effectively and didn't cause unexpected crashes. Additionally, some files required improvements to streamline the overall project structure.
 
@@ -136,7 +136,7 @@ We structured our backend to use the following components:
   - Ensuring that all modules and routes properly utilized the global error-handling mechanism required thorough testing and refactoring.
   - Refactoring multiple files without breaking existing functionality was challenging, as changes needed to be incremental and well-coordinated with the rest of the team.
 
-**Swagger Documentation Setup for API Docs**:
+##### Swagger Documentation Setup for API Docs:
 
 - **Problem**: As our API expanded, documenting the endpoints and ensuring developers could easily understand and interact with them became a necessity. Without proper documentation, it was hard for team members and external developers to understand how to use the API.
 
@@ -151,7 +151,7 @@ We structured our backend to use the following components:
 
 #### Jun 14, 2024
 
-**User Authentication System Setup**:
+##### User Authentication System Setup:
 
 - **Problem**: We needed to implement a robust user authentication system, allowing users to register and log in using their email and password. Additionally, proper authentication checks and requirements had to be in place for protected routes.
 
@@ -170,7 +170,7 @@ We structured our backend to use the following components:
 
 #### Jun 15, 2024
 
-**Added PugJS for Templating**:
+##### Added PugJS for Templating:
 
 - **Problem**: As we worked on backend development, we required a flexible and efficient templating engine to dynamically generate HTML for certain features. The goal was to make server-side rendering easier and more efficient.
 
@@ -183,7 +183,7 @@ We structured our backend to use the following components:
   - Learning and implementing **PugJS syntax** across different views and ensuring consistency with previously used static HTML was initially challenging.
   - Adapting the existing project structure to incorporate **PugJS** required some refactoring, especially in routes that rendered views dynamically.
 
-**User Authentication Improvements and Swagger Fixes**:
+##### User Authentication Improvements and Swagger Fixes:
 
 - **Problem**: We identified issues in the user authentication process, especially with finding users by email and ensuring proper protection for authenticated routes. Additionally, there were inconsistencies in the Swagger documentation for login and registration endpoints.
 
@@ -202,7 +202,7 @@ We structured our backend to use the following components:
 
   #### Jun 16, 2024
 
-**Fixing Issues with Path Alias**:
+##### Fixing Issues with Path Alias:
 
 - **Problem**: We encountered issues with the use of **path aliases** in the codebase. These problems caused difficulties in importing modules and managing the project's structure efficiently, leading to confusion and errors.
 
