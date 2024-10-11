@@ -1,6 +1,6 @@
 # Introduction
 
-At [Edust Org](https://github.com/edust-org), our backend development involved creating a complex architecture that supports multiple features, including user authentication, organization management, role-based access control, and API documentation. The primary objective of the **Edust-Backend** was to build a scalable and modular backend system to power our educational platform, facilitating smooth interactions between students, teachers, and organizations.
+At [Edust Org](https://github.com/edust-org), the frontend development for **Edust** focused on creating an intuitive and user-friendly interface that fosters collaboration within the educational community. The platform aims to serve students, teachers, and institutions by providing dynamic tools for organization management, website creation, and public visibility. The primary objective of the **Edust-Frontend** is to offer a seamless user experience while ensuring scalability, responsiveness, and ease of customization.
 
 # Versions
 
